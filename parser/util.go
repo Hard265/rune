@@ -52,7 +52,7 @@ func Parse(input *antlr.InputStream) (tree IProgramContext, err error) {
 	lexer.AddErrorListener(newRuneErrorListener())
 
 	tokens := antlr.NewCommonTokenStream(lexer, antlr.LexerDefaultTokenChannel)
-	parser := NewRuneParser(tokens)
+	parser := NewRuneParserParser(tokens)
 	parser.RemoveErrorListeners()
 	parser.AddErrorListener(newRuneErrorListener())
 

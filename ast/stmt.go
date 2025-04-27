@@ -5,7 +5,7 @@ import "github.com/antlr4-go/antlr/v4"
 type DeclarationStatement struct {
 	Token   antlr.Token
 	Type    string
-	Name    *Identifier
+	Name    *IdentifierExpression
 }
 
 func (ds *DeclarationStatement) statementNode() {}
@@ -13,7 +13,7 @@ func (ds *DeclarationStatement) TokenLiteral() string { return ds.Token.GetText(
 
 type AssignmentStatement struct {
 	Token antlr.Token
-	Name  *Identifier
+	Name  *IdentifierExpression
 	Value Expression
 }
 
@@ -23,7 +23,7 @@ func (as *AssignmentStatement) TokenLiteral() string { return as.Token.GetText()
 type DeclarationAssignmentStatement struct {
 	Token   antlr.Token
 	Type    string
-	Name    *Identifier
+	Name    *IdentifierExpression
 	Value   Expression
 }
 

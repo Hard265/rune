@@ -1,6 +1,8 @@
 package ast
 
 import (
+	"fmt"
+
 	"github.com/antlr4-go/antlr/v4"
 	"github.com/hard265/rune/parser"
 )
@@ -13,8 +15,35 @@ func NewASTBuilder() *ASTBuilder {
 	return &ASTBuilder{}
 }
 
+func (v *ASTBuilder) VisitProgram(ctx *parser.ProgramContext) any {
+	if ctx.GetChildCount() == 0 {
+		fmt.Println("VisitProgram: No statements found")
+		return &ProgramNode{Statements: []Statement{}} // Or handle this case as appropriate
+	}
+
+	statementResult := v.Visit(ctx.Statement(0))
+	if statementResult == nil {
+		fmt.Println("VisitProgram: v.Visit(ctx.Statement(0)) returned nil")
+		return &ProgramNode{Statements: []Statement{}} // Or handle this error
+	}
+
+	statements, ok := statementResult.([]Statement)
+	if !ok {
+		fmt.Printf("VisitProgram: v.Visit(ctx.Statement(0)) returned unexpected type: %T\n", statementResult)
+		return &ProgramNode{Statements: []Statement{}}
+	}
+
+	fmt.Printf("VisitProgram: Number of statements: %d\n", len(statements)) // Print the length of statements
+
+	return &ProgramNode{
+		Statements: statements,
+	}
+}
+
 func (v *ASTBuilder) Visit(tree antlr.ParseTree) any {
-	return tree.Accept(v)
+	result := tree.Accept(v)
+	fmt.Printf("Visit: Node type: %T, Result: %v\n", tree, result) // Add debug print
+	return result
 }
 
 func (v *ASTBuilder) VisitDeclaration(ctx *parser.DeclarationContext) any {

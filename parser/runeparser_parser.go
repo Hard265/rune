@@ -35,19 +35,19 @@ func runeparserParserInit() {
 	staticData.LiteralNames = []string{
 		"", "'int'", "'str'", "'bool'", "'double'", "", "", "", "", "", "",
 		"", "'('", "'['", "'{'", "')'", "']'", "'}'", "':'", "','", "';'", "'+'",
-		"'-'", "'*'", "'/'", "'|'", "'&'", "'<'", "'>'", "'='", "'.'", "'?'",
-		"'!'", "'%'", "'`'", "'=='", "'!='", "'<='", "'>='", "'~'", "'^'", "'<<'",
-		"'>>'", "'**'", "'||'", "'&&'", "'+='", "'-='", "'*='", "'/='", "'%='",
+		"'-'", "'*'", "'/'", "'|'", "'&'", "'!'", "'?'", "'<'", "'>'", "'='",
+		"'.'", "'%'", "'`'", "'=='", "'!='", "'<='", "'>='", "'~'", "'^'", "'<<'",
+		"'>>'", "'||'", "'&&'", "'**'", "'+='", "'-='", "'*='", "'/='", "'%='",
 		"'&='", "'|='", "'^='", "'@'",
 	}
 	staticData.SymbolicNames = []string{
 		"", "INT", "STR", "BOOL", "DOUBLE", "STRING_LITERAL", "DOUBLE_LITERAL",
 		"INTEGER_LITERAL", "BOOLEAN_LITERAL", "IDENTIFIER", "NEWLINE", "WHITESPACE",
 		"LPAR", "LSQB", "LBRACE", "RPAR", "RSQB", "RBRACE", "COLON", "COMMA",
-		"SEMI", "PLUS", "MINUS", "STAR", "SLASH", "VBAR", "AMPER", "LESS", "GREATER",
-		"EQUAL", "DOT", "QUESTION", "BANG", "PERCENT", "BACKQUOTE", "EQEQUAL",
+		"SEMI", "PLUS", "MINUS", "STAR", "SLASH", "VBAR", "AMPER", "BANG", "QUESTION",
+		"LESS", "GREATER", "EQUAL", "DOT", "PERCENT", "BACKQUOTE", "EQEQUAL",
 		"NOTEQUAL", "LESSEQUAL", "GREATEREQUAL", "TILDE", "CIRCUMFLEX", "LEFTSHIFT",
-		"RIGHTSHIFT", "DOUBLESTAR", "DOUBLEVBAR", "DOUBLEAMPER", "PLUSEQUAL",
+		"RIGHTSHIFT", "DOUBLEVBAR", "DOUBLEAMPER", "DOUBLESTAR", "PLUSEQUAL",
 		"MINEQUAL", "STAREQUAL", "SLASHEQUAL", "PERCENTEQUAL", "AMPEREQUAL",
 		"VBAREQUAL", "CIRCUMFLEXEQUAL", "AT", "COMMENT",
 	}
@@ -74,7 +74,7 @@ func runeparserParserInit() {
 		14, 1, 14, 1, 14, 5, 14, 114, 8, 14, 10, 14, 12, 14, 117, 9, 14, 1, 15,
 		1, 15, 1, 15, 1, 15, 1, 15, 1, 15, 3, 15, 125, 8, 15, 1, 16, 1, 16, 1,
 		16, 0, 0, 17, 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30,
-		32, 0, 7, 1, 0, 1, 4, 2, 0, 21, 22, 32, 32, 1, 0, 35, 36, 2, 0, 27, 28,
+		32, 0, 7, 1, 0, 1, 4, 2, 0, 21, 22, 27, 27, 1, 0, 35, 36, 2, 0, 29, 30,
 		37, 38, 1, 0, 21, 22, 1, 0, 23, 24, 1, 0, 5, 8, 123, 0, 37, 1, 0, 0, 0,
 		2, 45, 1, 0, 0, 0, 4, 47, 1, 0, 0, 0, 6, 50, 1, 0, 0, 0, 8, 54, 1, 0, 0,
 		0, 10, 59, 1, 0, 0, 0, 12, 61, 1, 0, 0, 0, 14, 66, 1, 0, 0, 0, 16, 68,
@@ -86,15 +86,15 @@ func runeparserParserInit() {
 		46, 3, 4, 2, 0, 43, 46, 3, 6, 3, 0, 44, 46, 3, 8, 4, 0, 45, 42, 1, 0, 0,
 		0, 45, 43, 1, 0, 0, 0, 45, 44, 1, 0, 0, 0, 46, 3, 1, 0, 0, 0, 47, 48, 3,
 		10, 5, 0, 48, 49, 5, 9, 0, 0, 49, 5, 1, 0, 0, 0, 50, 51, 5, 9, 0, 0, 51,
-		52, 5, 29, 0, 0, 52, 53, 3, 12, 6, 0, 53, 7, 1, 0, 0, 0, 54, 55, 3, 10,
-		5, 0, 55, 56, 5, 9, 0, 0, 56, 57, 5, 29, 0, 0, 57, 58, 3, 12, 6, 0, 58,
+		52, 5, 31, 0, 0, 52, 53, 3, 12, 6, 0, 53, 7, 1, 0, 0, 0, 54, 55, 3, 10,
+		5, 0, 55, 56, 5, 9, 0, 0, 56, 57, 5, 31, 0, 0, 57, 58, 3, 12, 6, 0, 58,
 		9, 1, 0, 0, 0, 59, 60, 7, 0, 0, 0, 60, 11, 1, 0, 0, 0, 61, 62, 3, 14, 7,
 		0, 62, 13, 1, 0, 0, 0, 63, 64, 7, 1, 0, 0, 64, 67, 3, 14, 7, 0, 65, 67,
 		3, 16, 8, 0, 66, 63, 1, 0, 0, 0, 66, 65, 1, 0, 0, 0, 67, 15, 1, 0, 0, 0,
 		68, 69, 3, 18, 9, 0, 69, 17, 1, 0, 0, 0, 70, 75, 3, 20, 10, 0, 71, 72,
-		5, 44, 0, 0, 72, 74, 3, 20, 10, 0, 73, 71, 1, 0, 0, 0, 74, 77, 1, 0, 0,
+		5, 43, 0, 0, 72, 74, 3, 20, 10, 0, 73, 71, 1, 0, 0, 0, 74, 77, 1, 0, 0,
 		0, 75, 73, 1, 0, 0, 0, 75, 76, 1, 0, 0, 0, 76, 19, 1, 0, 0, 0, 77, 75,
-		1, 0, 0, 0, 78, 83, 3, 22, 11, 0, 79, 80, 5, 45, 0, 0, 80, 82, 3, 22, 11,
+		1, 0, 0, 0, 78, 83, 3, 22, 11, 0, 79, 80, 5, 44, 0, 0, 80, 82, 3, 22, 11,
 		0, 81, 79, 1, 0, 0, 0, 82, 85, 1, 0, 0, 0, 83, 81, 1, 0, 0, 0, 83, 84,
 		1, 0, 0, 0, 84, 21, 1, 0, 0, 0, 85, 83, 1, 0, 0, 0, 86, 91, 3, 24, 12,
 		0, 87, 88, 7, 2, 0, 0, 88, 90, 3, 24, 12, 0, 89, 87, 1, 0, 0, 0, 90, 93,
@@ -176,12 +176,12 @@ const (
 	RuneParserParserSLASH           = 24
 	RuneParserParserVBAR            = 25
 	RuneParserParserAMPER           = 26
-	RuneParserParserLESS            = 27
-	RuneParserParserGREATER         = 28
-	RuneParserParserEQUAL           = 29
-	RuneParserParserDOT             = 30
-	RuneParserParserQUESTION        = 31
-	RuneParserParserBANG            = 32
+	RuneParserParserBANG            = 27
+	RuneParserParserQUESTION        = 28
+	RuneParserParserLESS            = 29
+	RuneParserParserGREATER         = 30
+	RuneParserParserEQUAL           = 31
+	RuneParserParserDOT             = 32
 	RuneParserParserPERCENT         = 33
 	RuneParserParserBACKQUOTE       = 34
 	RuneParserParserEQEQUAL         = 35
@@ -192,9 +192,9 @@ const (
 	RuneParserParserCIRCUMFLEX      = 40
 	RuneParserParserLEFTSHIFT       = 41
 	RuneParserParserRIGHTSHIFT      = 42
-	RuneParserParserDOUBLESTAR      = 43
-	RuneParserParserDOUBLEVBAR      = 44
-	RuneParserParserDOUBLEAMPER     = 45
+	RuneParserParserDOUBLEVBAR      = 43
+	RuneParserParserDOUBLEAMPER     = 44
+	RuneParserParserDOUBLESTAR      = 45
 	RuneParserParserPLUSEQUAL       = 46
 	RuneParserParserMINEQUAL        = 47
 	RuneParserParserSTAREQUAL       = 48
@@ -1383,7 +1383,7 @@ func (p *RuneParserParser) UnaryExpression() (localctx IUnaryExpressionContext) 
 			p.SetState(63)
 			_la = p.GetTokenStream().LA(1)
 
-			if !((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&4301258752) != 0) {
+			if !((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&140509184) != 0) {
 				p.GetErrorHandler().RecoverInline(p)
 			} else {
 				p.GetErrorHandler().ReportMatch(p)
@@ -2262,12 +2262,12 @@ func (p *RuneParserParser) RelationalExpression() (localctx IRelationalExpressio
 	}
 	_la = p.GetTokenStream().LA(1)
 
-	for (int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&412719513600) != 0 {
+	for (int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&413927473152) != 0 {
 		{
 			p.SetState(95)
 			_la = p.GetTokenStream().LA(1)
 
-			if !((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&412719513600) != 0) {
+			if !((int64(_la) & ^0x3f) == 0 && ((int64(1)<<_la)&413927473152) != 0) {
 				p.GetErrorHandler().RecoverInline(p)
 			} else {
 				p.GetErrorHandler().ReportMatch(p)

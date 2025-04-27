@@ -11,7 +11,7 @@ func TestParserBasicProgram(t *testing.T) {
 	input := antlr.NewInputStream("int a\n")
 	lexer := parser.NewRuneLexer(input)
 	tokenStream := antlr.NewCommonTokenStream(lexer, antlr.TokenDefaultChannel)
-	p := parser.NewRuneParser(tokenStream)
+	p := parser.NewRuneParserParser(tokenStream)
 
 	tree := p.Program()
 	
